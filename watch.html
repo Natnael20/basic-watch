@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        width: 100%;
+        background: linear-gradient(yellow,);
+    }
+
+    .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .hour, .minute, .seconds {
+        width: 100px;
+        height: 3cm;
+        color: red;
+        text-align: center;
+        font-size: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+</style>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="hour">
+            </div>
+            <div class="minute">
+            </div>
+            <div class="seconds">
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function updateClock() {
+        const now = new Date();
+
+        let hour = document.querySelector(".hour");
+        let minute = document.querySelector(".minute");
+        let seconds = document.querySelector(".seconds");
+
+        let currentHour = now.getHours();
+        let currentMinute = now.getMinutes();
+        let currentSeconds = now.getSeconds();
+
+        hour.innerHTML = currentHour;
+        minute.innerHTML = currentMinute;
+        seconds.innerHTML = currentSeconds;
+
+        setTimeout(updateClock, 1000); // Update every 1 second
+    }
+
+    // Initial call to start the clock
+    updateClock();
+
+</script>
+</html>
