@@ -11,33 +11,30 @@
         padding: 0;
         box-sizing: border-box;
         width: 100%;
-        background: linear-gradient(yellow,);
     }
 
     .container {
         height: 100vh;
+        background: linear-gradient(to right, #FF5733, #FFBD33);
         display: flex;
         justify-content: center;
         align-items: center;
+
     }
 
     .content {
+        background-color: rgb(80, 80, 80);
         display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
         text-align: center;
+        width: 28%;
+        border: 1px solid black;
     }
 
     .hour, .minute, .seconds {
-        width: 100px;
         height: 3cm;
-        color: red;
+        color: #fff;
         text-align: center;
         font-size: 90px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 
 
@@ -45,12 +42,12 @@
 <body>
     <div class="container">
         <div class="content">
-            <div class="hour">
-            </div>
-            <div class="minute">
-            </div>
-            <div class="seconds">
-            </div>
+            <p class="hour">
+            </p>
+            <p class="minute">
+            </p>
+            <p class="seconds">
+            </p>
         </div>
     </div>
 </body>
@@ -66,8 +63,8 @@
         let currentMinute = now.getMinutes();
         let currentSeconds = now.getSeconds();
 
-        hour.innerHTML = currentHour;
-        minute.innerHTML = currentMinute;
+        hour.innerHTML = currentHour + " :";
+        minute.innerHTML = currentMinute + " :";
         seconds.innerHTML = currentSeconds;
 
         setTimeout(updateClock, 1000); // Update every 1 second
